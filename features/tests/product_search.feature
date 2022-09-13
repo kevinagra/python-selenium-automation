@@ -6,4 +6,3 @@ Feature: Test Scenarios for Search functionality
     When Input Shoes into search field
     And Click on search icon
     Then Product results for Shoes are shown
-qa
