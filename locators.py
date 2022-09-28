@@ -27,5 +27,3 @@ driver.find_element(By.XPATH, "//a[contains(@href, 'backtoschool')]")
 
 # By multiple nodes:
 driver.find_element(By.XPATH, "//div[@id='nav-xshop-container']//a[contains(@href, 'new-releases')]")
-
-

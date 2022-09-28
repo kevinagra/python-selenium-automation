@@ -12,6 +12,3 @@ def verify_sign_in_page(context):
 def cart_is_empty(context):
     assert context.driver.find_element(By.CSS_SELECTOR, ".a-row.sc-your-amazon-cart-is-empty").is_displayed(), 'Your Amazon Cart is empty'
 
-
-
-

@@ -24,8 +24,3 @@ def search_product(context, product):
     element.send_keys(product)
     context.driver.find_element(By.ID, 'nav-search-submit-button').click()
 
-
-
-
-
-
