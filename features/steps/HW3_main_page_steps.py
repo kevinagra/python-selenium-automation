@@ -19,7 +19,7 @@ def click_on_cart(context):
 
 @when('Search for {product}')
 def search_product(context, product):
-    element = context.driver.find_element(by, 'twotabsearchtextbox')
+    element = context.driver.find_element(By.CSS_SELECTOR, "#twotabsearchtextbox")
     element.clear()
     element.send_keys(product)
     context.driver.find_element(By.ID, 'nav-search-submit-button').click()

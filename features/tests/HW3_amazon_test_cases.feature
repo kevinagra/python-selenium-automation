@@ -11,7 +11,9 @@ Feature: Amazon test cases
     When Click on empty cart
     Then Your Amazon Cart is empty
 
-  #Scenario: User can add a product into cart, and see # of item(s)
-    #Given
-    #When
-    #Then
+  Scenario: User can add a product into cart, and see # of item(s)
+    Given Open Amazon page
+    When Search for cup
+    When Click on first result
+    When Add to Cart
+    Then Verify item(s) line is shown
