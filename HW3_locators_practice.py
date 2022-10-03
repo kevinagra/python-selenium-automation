@@ -19,6 +19,7 @@ Re-enter password field - search by id "ap_password_check"
 'Conditions of Use' link - search by href "/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=508088"
 
 'Privacy Notice' link - search by href "/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496"
+'Privacy Notice' link 2 - search by href "a[href*='ap_register_notification_privacy_notice?ie=UTF8&nodeId=468496']"
 
 'Sign in' link - search by class "a-link-emphasis"
 
