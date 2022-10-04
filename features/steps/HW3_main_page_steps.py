@@ -2,6 +2,10 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 
+BEST_SELLERS = (By.CSS_SELECTOR, "a[href*='nav_cs_bestsellers']")
+HAM_MENU = (By.ID, 'nav-hamburger-menu')
+
+
 @given('Open Amazon page')
 def open_amazon(context):
     context.driver.get("https://www.amazon.com/")
@@ -23,4 +27,15 @@ def search_product(context, product):
     element.clear()
     element.send_keys(product)
     context.driver.find_element(By.ID, 'nav-search-submit-button').click()
+
+
+@when('Click on Best Sellers')
+def click_best_sellers(context):
+    context.driver.find_element(*BEST_SELLERS).click()
+
+
+@then('Verify hamburger menu is present')
+def verify_ham_menu_present(context):
+    menu = context.driver.find_elements(*HAM_MENU)
+    print(menu)
 
