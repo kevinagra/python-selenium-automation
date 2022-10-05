@@ -3,6 +3,7 @@ from behave import given, when, then
 
 
 BEST_SELLERS = (By.CSS_SELECTOR, "a[href*='nav_cs_bestsellers']")
+CUSTOMER_SERVICE = (By.CSS_SELECTOR, "a[href*='nav_cs_customerservice']")
 HAM_MENU = (By.ID, 'nav-hamburger-menu')
 
 
@@ -32,6 +33,11 @@ def search_product(context, product):
 @when('Click on Best Sellers')
 def click_best_sellers(context):
     context.driver.find_element(*BEST_SELLERS).click()
+
+
+@when('Click on Customer Service')
+def click_cust_service(context):
+    context.driver.find_element(*CUSTOMER_SERVICE).click()
 
 
 @then('Verify hamburger menu is present')
