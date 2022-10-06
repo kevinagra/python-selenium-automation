@@ -3,17 +3,17 @@ from behave import given, when, then
 
 #(By.CSS_SELECTOR, "input[name='email'][type='email'][maxlength='128']")
 
-ALL_HELP_HEADER = (By.CSS_SELECTOR, ".fs-heading.bolded")
-CUSTOMER_SERVICE = (By.CSS_SELECTOR, ".fs-heading.bolded")
+ALL_HELP_HEADER = (By.XPATH, "//*[@class='fs-heading bolded']")
+CUSTOMER_SERVICE = (By.XPATH, "//*[@class='fs-heading bolded']")
 CUSTOMER_SERVICE_LINKS = (By.CSS_SELECTOR, ".issue-card-wrapper")
-HELP_LIBRARY = (By.CSS_SELECTOR, ".fs-heading.bolded")
+HELP_LIBRARY = (By.XPATH, "//*[@class='fs-heading bolded']")
 HELP_SEARCH_BAR = (By.CSS_SELECTOR, '.a-search.a-span12')
 HELP_TOPICS_SECTION = (By.CSS_SELECTOR, '.help-topics-list-wrapper')
 
 
 @then('Customer Service page shows')
 def cust_serv_page(context):
-    assert context.driver.find_element(*CUSTOMER_SERVICE).is_displayed(), 'Welcome to Amazon Customer Service'
+    assert context.driver.find_element(*CUSTOMER_SERVICE).is_displayed(), 'Welcome to Amazon Customer Service'.text
 
 
 @then('Verify 9 Customer Service links')
@@ -25,7 +25,7 @@ def verify_link_count(context):
 
 @then('Verify - Search our help library')
 def help_library(context):
-    assert context.driver.find_element(*HELP_LIBRARY).is_displayed(), 'Search our help library'
+    assert context.driver.find_element(*HELP_LIBRARY).is_displayed(), 'Search our help library'.text
 
 
 @then('Verify - help search bar is present')
@@ -37,7 +37,7 @@ def help_search_bar(context):
 
 @then('Verify - All help topics')
 def help_library(context):
-    assert context.driver.find_element(*ALL_HELP_HEADER).is_displayed(), 'All help topics'
+    assert context.driver.find_element(*ALL_HELP_HEADER).is_displayed(), 'All help topics'.text
 
 
 @then('Verify - help topics section exists')
