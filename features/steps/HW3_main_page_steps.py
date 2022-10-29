@@ -9,7 +9,8 @@ HAM_MENU = (By.ID, 'nav-hamburger-menu')
 
 @given('Open Amazon page')
 def open_amazon(context):
-    context.driver.get("https://www.amazon.com/")
+    # context.driver.get("https://www.amazon.com/")
+    context.app.main_page.open_main()
 
 
 @when('Clicks on returns & orders link')
@@ -17,17 +18,29 @@ def go_to_sign_in_page(context):
     context.driver.find_element(By.XPATH, "//a[@href='/gp/css/order-history?ref_=nav_orders_first']").click()
 
 
+@when('Click Amazon Orders link')
+def go_to_sign_in_page(context):
+    # context.driver.find_element(By.XPATH, "//a[@href='/gp/css/order-history?ref_=nav_orders_first']").click()
+    context.app.main_page.click_orders()
+
 @when('Click on empty cart')
 def click_on_cart(context):
     context.driver.find_element(By.ID, 'nav-cart-count').click()
 
 
+@when('Click on cart icon')
+def click_on_cart(context):
+    # context.driver.find_element(By.ID, 'nav-cart-count').click()
+    context.app.main_page.click_cart()
+
+
 @when('Search for {product}')
 def search_product(context, product):
-    element = context.driver.find_element(By.CSS_SELECTOR, ".nav-input.nav-progressive-attribute")
-    element.clear()
-    element.send_keys(product)
-    context.driver.find_element(By.ID, 'nav-search-submit-button').click()
+    # element = context.driver.find_element(By.CSS_SELECTOR, ".nav-input.nav-progressive-attribute")
+    # element.clear()
+    # element.send_keys(product)
+    # context.driver.find_element(By.ID, 'nav-search-submit-button').click()
+    context.app.main_page.search_product(product)
 
 
 @when('Click on Best Sellers')

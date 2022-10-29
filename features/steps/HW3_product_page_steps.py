@@ -13,7 +13,8 @@ def open_amazon_product(context, product_id):
 
 @when('Add to Cart')
 def add_to_cart(context):
-    context.driver.find_element(By.CSS_SELECTOR, '#add-to-cart-button').click()
+    # context.driver.find_element(By.CSS_SELECTOR, '#add-to-cart-button').click()
+    context.app.product_page.add_to_cart()
 
 
 @when('Buy Now button')
