@@ -27,6 +27,12 @@ def add_to_cart(context):
     time.sleep(4)
     context.driver.find_element(By.CSS_SELECTOR, '#.a-button-input').click()
 
+
+@when('Hover over New Arrivals')
+def hover_new_arrivals(context):
+    context.app.product_page.hover_new_arrivals()
+
+
 @then('Verify user can click through colors')
 def verify_can_click_colors(context):
     expected_colors = ['Army Green', 'Black', 'Blue']
@@ -38,4 +44,9 @@ def verify_can_click_colors(context):
         actual_colors += [current_color]
     assert expected_colors == actual_colors, \
         f' Expected colors {expected_colors} did not match actual {actual_colors}'
+
+
+@then('Verify user can see deals')
+def verify_see_deals(context):
+    context.app.product_page.verify_see_deals()
 

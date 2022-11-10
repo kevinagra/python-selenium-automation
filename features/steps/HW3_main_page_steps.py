@@ -13,6 +13,12 @@ def open_amazon(context):
     context.app.main_page.open_main()
 
 
+@given('Open Kitty Cat Hoodie page')
+def open_amazon(context):
+    # context.driver.get("https://www.amazon.com/gp/product/B074TBCSC8")
+    context.app.main_page.open_kitty_cat_page()
+
+
 @when('Clicks on returns & orders link')
 def go_to_sign_in_page(context):
     context.driver.find_element(By.XPATH, "//a[@href='/gp/css/order-history?ref_=nav_orders_first']").click()
@@ -22,6 +28,7 @@ def go_to_sign_in_page(context):
 def go_to_sign_in_page(context):
     # context.driver.find_element(By.XPATH, "//a[@href='/gp/css/order-history?ref_=nav_orders_first']").click()
     context.app.main_page.click_orders()
+
 
 @when('Click on empty cart')
 def click_on_cart(context):
@@ -53,9 +60,18 @@ def click_cust_service(context):
     context.driver.find_element(*CUSTOMER_SERVICE).click()
 
 
+@when('Select Movies & TV department')
+def select_department(context):
+    context.app.main_page.select_department()
+
+
+# @when('Select department by value {selection_value}')
+# def select_department(context, selection_value):
+#     context.app.main_page.select_department(selection_value)
+
+
 @then('Verify hamburger menu is present')
 def verify_ham_menu_present(context):
     menu = context.driver.find_elements(*HAM_MENU)
     print(menu)
-
 

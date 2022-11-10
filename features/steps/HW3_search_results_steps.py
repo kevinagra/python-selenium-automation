@@ -12,6 +12,16 @@ def click_first_result(context):
     context.app.results_page.click_first_result()
 
 
+@then('Verify Movies & TV department is selected')
+def verify_department(context):
+    context.app.results_page.verify_department1()
+
+
+@then('Verify {department} department is selected')
+def verify_department(context, department):
+    context.app.results_page.verify_department2(department)
+
+
 # @then('Verify results rows has 62 names')
 # def verify_row_name_count(context):
 #     names = context.driver.find_elements(*RESULTS_NAMES)
